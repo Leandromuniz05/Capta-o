@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Captação e Terapia</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff; /* fundo branco */
+      color: #333;
+    }
+    header {
+      background-color: #cc0000;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    header img {
+      max-width: 120px;
+      margin-bottom: 10px;
+    }
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #cc0000;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      width: 100%;
+    }
+    button {
+      background-color: #cc0000;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #a00000;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      background-color: #f0f0f0;
+    }
+    footer a {
+      color: #cc0000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    /* classe para adicionar imagens em qualquer lugar do HTML */
+    .img-content {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 1rem auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- LOGOTIPO (substitua logo.png pelo caminho do seu arquivo) -->
+    <img src="logo.png" alt="Logotipo Captação e Terapia">
+    <h1>Captação e Terapia</h1>
+    <p>Transforme sua vida através do cuidado</p>
+  </header>
+
+  <main>
+    <h2>Entre em Contato</h2>
+    <p>Preencha o formulário abaixo e fale conosco diretamente pelo WhatsApp.</p>
+
+    <form onsubmit="enviarWhatsApp(event)">
+      <input type="text" id="nome" placeholder="Seu nome" required>
+      <input type="text" id="telefone" placeholder="Seu telefone" required>
+      <textarea id="mensagem" placeholder="Digite sua mensagem" required></textarea>
+      <button type="submit">Enviar pelo WhatsApp</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Captação e Terapia. Todos os direitos reservados.</p>
+    <!-- Link fixo para WhatsApp com mensagem pré-programada -->
+    <p>
+      <a href="https://wa.me/55SEUNUMEROAQUI?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20Captação%20e%20Terapia." target="_blank">
+        📱 Fale conosco pelo WhatsApp
+      </a>
+    </p>
+  </footer>
+
+  <script>
+    function enviarWhatsApp(e) {
+      e.preventDefault();
+      let nome = document.getElementById("nome").value;
+      let telefone = document.getElementById("telefone").value;
+      let mensagem = document.getElementById("mensagem").value;
+
+      let texto = `Olá, meu nome é ${nome}. Telefone: ${telefone}. Mensagem: ${mensagem}`;
+      let url = "https://wa.me/55SEUNUMEROAQUI?text=" + encodeURIComponent(texto);
+
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
